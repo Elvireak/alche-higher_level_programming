@@ -1,19 +1,20 @@
 #!/usr/bin/python3
-"""Defines Rectangle class with area and string representation."""
+""" module subclass rectangle
+"""
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
-Rectangle = __import__('8-rectangle').Rectangle
 
-
-class Rectangle(Rectangle):
-    """Rectangle class."""
+class Rectangle(BaseGeometry):
+    """Rectangle that inherits from BaseGeometry"""
+    def __init__(self, width, height):
+        BaseGeometry.integer_validator(self, 'height', height)
+        self.__height = height
+        BaseGeometry.integer_validator(self, 'width', width)
+        self.__width = width
 
     def area(self):
-        """Returns area of rectangle."""
-        return self._Rectangle__width * self._Rectangle__height
+        return self.__width * self.__height
 
     def __str__(self):
-        """String representation of rectangle."""
-        return "[Rectangle] {}/{}".format(
-            self._Rectangle__width,
-            self._Rectangle__height
-        )
+
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
