@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # Sends a DELETE request to the URL passed as first argument
-curl -X DELETE "$1"
+curl -s -X DELETE "$1"
